@@ -51,7 +51,7 @@ function applyLanguage(lang) {
   htmlEl.dir  = lang === 'ar' ? 'rtl' : 'ltr';
 
   // Toggle button label
-  langLabel.textContent = lang === 'ar' ? 'EN' : 'ع';
+  langLabel.textContent = lang === 'ar' ? 'EN' : 'عربي';
 
   // Swap all elements that have data-en / data-ar
   document.querySelectorAll('[data-en]').forEach(el => {
