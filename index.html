@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Habib Khair — Data Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -22,11 +22,14 @@
 <nav>
   <div class="logo">Habib Khair</div>
   <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#skills"   data-en="Skills"   data-ar="المهارات">Skills</a></li>
+    <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+    <li><a href="#about"    data-en="About"    data-ar="عني">About</a></li>
+    <li><a href="#contact"  data-en="Contact"  data-ar="تواصل">Contact</a></li>
   </ul>
+  <button id="lang-toggle" aria-label="Switch language">
+    <span id="lang-label">ع</span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -34,155 +37,226 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <span class="hero-tag">Available for freelance work</span>
-    <h1>Turning messy data into<br/><span>clear decisions</span></h1>
-    <p>Data Analyst specializing in Excel, SQL, Python & Power BI. I help teams understand their data and act on it confidently.</p>
+    <span class="hero-tag"
+      data-en="Available for freelance work"
+      data-ar="متاح للعمل الحر">Available for freelance work</span>
+    <h1
+      data-en="Turning messy data into<br/><span>clear decisions</span>"
+      data-ar="تحويل البيانات الفوضوية إلى<br/><span>قرارات واضحة</span>">
+      Turning messy data into<br/><span>clear decisions</span>
+    </h1>
+    <p
+      data-en="Data Analyst specializing in Excel, SQL, Python, and Power BI, helping businesses turn complex data into clear, actionable insights. With 7+ years of experience bridging operational management and analytics, I bring a results-driven approach to solving real business problems. I'm skilled in Python, SQL, Pandas, NumPy, and data visualization, with hands-on expertise in inventory optimization, KPI tracking, forecasting, and dashboard development. I have a proven track record of reducing cost of goods sold by 15%, cutting excess inventory by 20%, and improving operational efficiency by 25%. I focus on delivering practical, data-driven solutions that support smarter decision-making and drive measurable impact across teams."
+      data-ar="محلل بيانات متخصص في Excel وSQL وPython وPower BI، أساعد الشركات على تحويل البيانات المعقدة إلى رؤى واضحة وقابلة للتنفيذ. بخبرة تمتد لأكثر من 7 سنوات في الجمع بين الإدارة التشغيلية والتحليل، أقدّم نهجاً موجّهاً نحو النتائج لحل مشكلات الأعمال الحقيقية. أمتلك خبرة عملية في تحسين المخزون، وتتبع مؤشرات الأداء الرئيسية، والتنبؤ، وتطوير لوحات المعلومات. حققت تقليل تكلفة البضائع المبيعة بنسبة 15%، وخفض المخزون الزائد بنسبة 20%، وتحسين الكفاءة التشغيلية بنسبة 25%.">
+      Data Analyst specializing in Excel, SQL, Python, and Power BI, helping businesses turn complex data into clear, actionable insights. With 7+ years of experience bridging operational management and analytics, I bring a results-driven approach to solving real business problems. I'm skilled in Python, SQL, Pandas, NumPy, and data visualization, with hands-on expertise in inventory optimization, KPI tracking, forecasting, and dashboard development. I have a proven track record of reducing cost of goods sold by 15%, cutting excess inventory by 20%, and improving operational efficiency by 25%. I focus on delivering practical, data-driven solutions that support smarter decision-making and drive measurable impact across teams.
+    </p>
     <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <a href="#projects" class="btn btn-primary"
+         data-en="View My Work" data-ar="اعمالي">View My Work</a>
+      <a href="#contact" class="btn btn-outline"
+         data-en="Get in Touch" data-ar="تواصل معي">Get in Touch</a>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="section-label">What I Do</div>
-  <h2 class="section-title">Core Capabilities</h2>
-  <p class="section-sub">From raw data to decision-ready dashboards — I focus on making data simple, clear, and genuinely useful.</p>
+  <div class="section-label" data-en="What I Do" data-ar="ماذا أفعل">What I Do</div>
+  <h2 class="section-title" data-en="Core Capabilities" data-ar="القدرات الأساسية">Core Capabilities</h2>
+  <p class="section-sub"
+     data-en="From raw data to decision-ready dashboards — I focus on making data simple, clear, and genuinely useful."
+     data-ar="من البيانات الخام إلى لوحات المعلومات الجاهزة للقرار — أركّز على جعل البيانات بسيطة وواضحة ومفيدة فعلاً.">
+    From raw data to decision-ready dashboards — I focus on making data simple, clear, and genuinely useful.
+  </p>
   <div class="skills-grid">
     <div class="skill-card reveal">
       <span class="skill-icon">📊</span>
-      <h3>Data Cleaning</h3>
-      <p>Messy data? I clean, structure, and prepare it for analysis using Excel, Power Query, and Pandas — so you can trust your numbers.</p>
+      <h3 data-en="Data Cleaning" data-ar="تنظيف البيانات">Data Cleaning</h3>
+      <p data-en="Messy data? I clean, structure, and prepare it for analysis using Excel, Power Query, and Pandas — so you can trust your numbers."
+         data-ar="بيانات فوضوية؟ أقوم بتنظيفها وهيكلتها وإعدادها للتحليل باستخدام Excel وPower Query وPandas — حتى تثق بأرقامك.">
+        Messy data? I clean, structure, and prepare it for analysis using Excel, Power Query, and Pandas — so you can trust your numbers.
+      </p>
     </div>
     <div class="skill-card reveal">
       <span class="skill-icon">📈</span>
-      <h3>Data Visualization</h3>
-      <p>I build dashboards and visual reports in Excel and Power BI that make insights immediately clear and easy to act on.</p>
+      <h3 data-en="Data Visualization" data-ar="تصوير البيانات">Data Visualization</h3>
+      <p data-en="I build dashboards and visual reports in Excel and Power BI that make insights immediately clear and easy to act on."
+         data-ar="أبني لوحات معلومات وتقارير مرئية في Excel وPower BI تجعل الرؤى واضحة فوراً وسهلة التطبيق.">
+        I build dashboards and visual reports in Excel and Power BI that make insights immediately clear and easy to act on.
+      </p>
     </div>
     <div class="skill-card reveal">
       <span class="skill-icon">🗄️</span>
-      <h3>SQL Analysis</h3>
-      <p>Writing optimized queries to extract, join, and explore data from relational databases — turning business questions into precise data answers.</p>
+      <h3 data-en="SQL Analysis" data-ar="تحليل SQL">SQL Analysis</h3>
+      <p data-en="Writing optimized queries to extract, join, and explore data from relational databases — turning business questions into precise data answers."
+         data-ar="كتابة استعلامات محسّنة لاستخراج البيانات ودمجها واستكشافها من قواعد البيانات العلائقية — وتحويل أسئلة الأعمال إلى إجابات دقيقة.">
+        Writing optimized queries to extract, join, and explore data from relational databases — turning business questions into precise data answers.
+      </p>
     </div>
     <div class="skill-card reveal">
       <span class="skill-icon">🐍</span>
-      <h3>Python Wrangling</h3>
-      <p>Using Pandas, NumPy & Matplotlib to handle large datasets, automate repetitive tasks, and uncover patterns at scale.</p>
+      <h3 data-en="Python Wrangling" data-ar="معالجة Python">Python Wrangling</h3>
+      <p data-en="Using Pandas, NumPy &amp; Matplotlib to handle large datasets, automate repetitive tasks, and uncover patterns at scale."
+         data-ar="استخدام Pandas وNumPy وMatplotlib للتعامل مع مجموعات البيانات الكبيرة، وأتمتة المهام المتكررة، وكشف الأنماط على نطاق واسع.">
+        Using Pandas, NumPy &amp; Matplotlib to handle large datasets, automate repetitive tasks, and uncover patterns at scale.
+      </p>
     </div>
     <div class="skill-card reveal">
       <span class="skill-icon">📦</span>
-      <h3>KPI Tracking</h3>
-      <p>Designing and tracking KPIs that genuinely reflect performance — so teams can monitor what matters and drive real decisions.</p>
+      <h3 data-en="KPI Tracking" data-ar="تتبع مؤشرات الأداء">KPI Tracking</h3>
+      <p data-en="Designing and tracking KPIs that genuinely reflect performance — so teams can monitor what matters and drive real decisions."
+         data-ar="تصميم وتتبع مؤشرات الأداء الرئيسية التي تعكس الأداء الحقيقي — حتى تتمكن الفرق من مراقبة ما يهم واتخاذ قرارات فعلية.">
+        Designing and tracking KPIs that genuinely reflect performance — so teams can monitor what matters and drive real decisions.
+      </p>
     </div>
     <div class="skill-card reveal">
       <span class="skill-icon">🔮</span>
-      <h3>Forecasting & Insights</h3>
-      <p>Identifying trends, predicting outcomes, and helping teams stay ahead of problems before they become expensive.</p>
+      <h3 data-en="Forecasting &amp; Insights" data-ar="التنبؤ والرؤى">Forecasting &amp; Insights</h3>
+      <p data-en="Identifying trends, predicting outcomes, and helping teams stay ahead of problems before they become expensive."
+         data-ar="تحديد الاتجاهات، والتنبؤ بالنتائج، ومساعدة الفرق على البقاء في صدارة المشكلات قبل أن تصبح مكلفة.">
+        Identifying trends, predicting outcomes, and helping teams stay ahead of problems before they become expensive.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">Portfolio</div>
-  <h2 class="section-title">Explore My Work</h2>
-  <p class="section-sub">A selection of projects across SQL and Python — built as part of the Udacity Data Analyst Nanodegree.</p>
+  <div class="section-label" data-en="Portfolio" data-ar="الأعمال">Portfolio</div>
+  <h2 class="section-title" data-en="Explore My Work" data-ar="استكشف أعمالي">Explore My Work</h2>
+  <p class="section-sub"
+     data-en="A selection of projects across SQL and Python — built as part of the Udacity Data Analyst Nanodegree."
+     data-ar="مجموعة مختارة من المشاريع في SQL وPython — مبنية كجزء من برنامج Udacity لمحلل البيانات.">
+    A selection of projects across SQL and Python — built as part of the Udacity Data Analyst Nanodegree.
+  </p>
 
   <div class="projects-tabs">
-    <button class="tab-btn active" onclick="filterProjects('all', this)">All</button>
-    <button class="tab-btn" onclick="filterProjects('sql', this)">SQL</button>
-    <button class="tab-btn" onclick="filterProjects('python', this)">Python</button>
+    <button class="tab-btn active" onclick="filterProjects('all', this)"
+            data-en="All" data-ar="الكل">All</button>
+    <button class="tab-btn" onclick="filterProjects('sql', this)"
+            data-en="SQL" data-ar="SQL">SQL</button>
+    <button class="tab-btn" onclick="filterProjects('python', this)"
+            data-en="Python" data-ar="Python">Python</button>
   </div>
 
   <div class="projects-grid" id="projectsGrid">
 
-    <!-- PROJECT 1 — Investigate a Relational Database (SQL) -->
+    <!-- PROJECT 1 -->
     <div class="project-card reveal" data-cat="sql">
       <div class="project-thumb sql">🗄️</div>
       <div class="project-body">
         <div class="project-meta">
           <div class="project-tag">SQL</div>
-          <span class="project-date">May 29, 2024 · Udacity — Programming for Data Science with Python</span>
+          <span class="project-date"
+                data-en="May 29, 2024 · Udacity — Programming for Data Science with Python"
+                data-ar="٢٩ مايو ٢٠٢٤ · Udacity — البرمجة لعلم البيانات بـ Python">
+            May 29, 2024 · Udacity — Programming for Data Science with Python
+          </span>
         </div>
-        <h3>Investigate a Relational Database</h3>
-        <p>Explored a relational database using SQL to uncover meaningful business insights. Developed complex, error-free queries utilizing joins, aggregations, subqueries, CTEs, and window functions to analyze rental trends, customer behavior, and film category performance. Key findings included the popularity of family-friendly films, variations in store rental activity over time, and identification of top-paying customers — all presented through clear, well-designed visualizations.</p>
+        <h3 data-en="Investigate a Relational Database"
+            data-ar="استكشاف قاعدة بيانات علائقية">Investigate a Relational Database</h3>
+        <p data-en="Explored a relational database using SQL to uncover meaningful business insights. Developed complex, error-free queries utilizing joins, aggregations, subqueries, CTEs, and window functions to analyze rental trends, customer behavior, and film category performance. Key findings included the popularity of family-friendly films, variations in store rental activity over time, and identification of top-paying customers — all presented through clear, well-designed visualizations."
+           data-ar="استكشاف قاعدة بيانات علائقية باستخدام SQL لكشف رؤى تجارية ذات معنى. طوّرت استعلامات معقدة وخالية من الأخطاء باستخدام الانضمامات والتجميعات والاستعلامات الفرعية وCTEs ودوال النوافذ لتحليل اتجاهات الإيجار وسلوك العملاء وأداء فئات الأفلام. شملت النتائج الرئيسية شعبية الأفلام المناسبة للعائلة، وتفاوت نشاط تأجير المتاجر بمرور الوقت، وتحديد أعلى العملاء إنفاقاً.">
+          Explored a relational database using SQL to uncover meaningful business insights. Developed complex, error-free queries utilizing joins, aggregations, subqueries, CTEs, and window functions to analyze rental trends, customer behavior, and film category performance. Key findings included the popularity of family-friendly films, variations in store rental activity over time, and identification of top-paying customers — all presented through clear, well-designed visualizations.
+        </p>
         <div class="project-gallery">
-          <img src="images/SQL 1.png" alt="SQL Query 1" data-caption="SQL Query 1 — Rental trends by film category" />
-          <img src="images/SQL 2.png" alt="SQL Query 2" data-caption="SQL Query 2 — Store rental activity over time" />
-          <img src="images/SQL 3.png" alt="SQL Query 3" data-caption="SQL Query 3 — Top-paying customers analysis" />
-          <img src="images/SQL 4.png" alt="SQL Query 4" data-caption="SQL Query 4 — Family-friendly film popularity" />
+          <img src="images/SQL 1.png" alt="SQL Query 1" data-caption="SQL Query 1 — Rental trends by film category" data-caption-ar="استعلام SQL 1 — اتجاهات الإيجار حسب فئة الفيلم" />
+          <img src="images/SQL 2.png" alt="SQL Query 2" data-caption="SQL Query 2 — Store rental activity over time" data-caption-ar="استعلام SQL 2 — نشاط تأجير المتجر عبر الزمن" />
+          <img src="images/SQL 3.png" alt="SQL Query 3" data-caption="SQL Query 3 — Top-paying customers analysis" data-caption-ar="استعلام SQL 3 — تحليل أعلى العملاء إنفاقاً" />
+          <img src="images/SQL 4.png" alt="SQL Query 4" data-caption="SQL Query 4 — Family-friendly film popularity" data-caption-ar="استعلام SQL 4 — شعبية الأفلام المناسبة للعائلة" />
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 2 — Explore US Bikeshare Data (Python) -->
+    <!-- PROJECT 2 -->
     <div class="project-card reveal" data-cat="python">
       <div class="project-thumb python">🐍</div>
       <div class="project-body">
         <div class="project-meta">
           <div class="project-tag">Python · Pandas</div>
-          <span class="project-date">July 24, 2024 · Udacity — Programming for Data Science with Python</span>
+          <span class="project-date"
+                data-en="July 24, 2024 · Udacity — Programming for Data Science with Python"
+                data-ar="٢٤ يوليو ٢٠٢٤ · Udacity — البرمجة لعلم البيانات بـ Python">
+            July 24, 2024 · Udacity — Programming for Data Science with Python
+          </span>
         </div>
-        <h3>Explore US Bikeshare Data</h3>
-        <p>Built an interactive Python program to analyze bikeshare data for different US cities. The program prompts users to choose a city, month, and day to filter the data, then loads the dataset with Pandas and cleans it by converting dates and extracting useful fields like month, day, and hour. Functions calculate key statistics including most common travel times, popular stations, trip durations, and user demographics — plus a feature to display raw data step-by-step on request.</p>
+        <h3 data-en="Explore US Bikeshare Data"
+            data-ar="استكشاف بيانات مشاركة الدراجات الأمريكية">Explore US Bikeshare Data</h3>
+        <p data-en="Built an interactive Python program to analyze bikeshare data for different US cities. The program prompts users to choose a city, month, and day to filter the data, then loads the dataset with Pandas and cleans it by converting dates and extracting useful fields like month, day, and hour. Functions calculate key statistics including most common travel times, popular stations, trip durations, and user demographics — plus a feature to display raw data step-by-step on request."
+           data-ar="بناء برنامج Python تفاعلي لتحليل بيانات مشاركة الدراجات في مدن أمريكية مختلفة. يطلب البرنامج من المستخدم اختيار المدينة والشهر واليوم لتصفية البيانات، ثم يحمّل مجموعة البيانات باستخدام Pandas وينظّفها. تحسب الدوال إحصائيات رئيسية تشمل أوقات السفر الأكثر شيوعاً والمحطات الشائعة ومدة الرحلة وبيانات المستخدمين.">
+          Built an interactive Python program to analyze bikeshare data for different US cities. The program prompts users to choose a city, month, and day to filter the data, then loads the dataset with Pandas and cleans it by converting dates and extracting useful fields like month, day, and hour. Functions calculate key statistics including most common travel times, popular stations, trip durations, and user demographics — plus a feature to display raw data step-by-step on request.
+        </p>
         <div class="project-gallery single">
-          <img src="images/code.png" alt="Python code output" data-caption="Python code — US Bikeshare data analysis output" />
+          <img src="images/code.png" alt="Python code output"
+               data-caption="Python code — US Bikeshare data analysis output"
+               data-caption-ar="كود Python — مخرجات تحليل بيانات مشاركة الدراجات" />
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 3 — Medical Appointment No-Shows (Python) -->
+    <!-- PROJECT 3 -->
     <div class="project-card reveal" data-cat="python">
       <div class="project-thumb python">📊</div>
       <div class="project-body">
         <div class="project-meta">
           <div class="project-tag">Python · Pandas · Matplotlib</div>
-          <span class="project-date">November 5, 2024 · Udacity — Data Analyst Nanodegree</span>
+          <span class="project-date"
+                data-en="November 5, 2024 · Udacity — Data Analyst Nanodegree"
+                data-ar="٥ نوفمبر ٢٠٢٤ · Udacity — نانودرجة محلل البيانات">
+            November 5, 2024 · Udacity — Data Analyst Nanodegree
+          </span>
         </div>
-        <h3>Investigate a Dataset — Medical Appointment No-Shows</h3>
-        <p>Used Python (Pandas, NumPy, and Matplotlib) to analyze a real-world healthcare dataset and identify factors affecting patient attendance. Starting with thorough data wrangling — assessing structure, checking data types, finding duplicates, and validating quality — invalid age values were corrected, column names standardized, and unnecessary columns removed. EDA with visualizations compared variables like age, chronic conditions, SMS reminders, and neighborhood, finding that Ardim Camburi had the highest patient count and best show rate.</p>
+        <h3 data-en="Investigate a Dataset — Medical Appointment No-Shows"
+            data-ar="استكشاف مجموعة بيانات — غياب المرضى عن المواعيد الطبية">
+          Investigate a Dataset — Medical Appointment No-Shows
+        </h3>
+        <p data-en="Used Python (Pandas, NumPy, and Matplotlib) to analyze a real-world healthcare dataset and identify factors affecting patient attendance. Starting with thorough data wrangling — assessing structure, checking data types, finding duplicates, and validating quality — invalid age values were corrected, column names standardized, and unnecessary columns removed. EDA with visualizations compared variables like age, chronic conditions, SMS reminders, and neighborhood, finding that Ardim Camburi had the highest patient count and best show rate."
+           data-ar="استخدام Python (Pandas وNumPy وMatplotlib) لتحليل مجموعة بيانات رعاية صحية حقيقية وتحديد العوامل المؤثرة في حضور المرضى. بدأت بمعالجة شاملة للبيانات — تقييم الهيكل والتحقق من أنواع البيانات وإيجاد التكرارات والتحقق من الجودة. قارنت التحليلات متغيرات مثل العمر والأمراض المزمنة ورسائل SMS والحي، ووجدت أن أرديم كامبوري يمتلك أعلى عدد مرضى وأفضل معدل حضور.">
+          Used Python (Pandas, NumPy, and Matplotlib) to analyze a real-world healthcare dataset and identify factors affecting patient attendance. Starting with thorough data wrangling — assessing structure, checking data types, finding duplicates, and validating quality — invalid age values were corrected, column names standardized, and unnecessary columns removed. EDA with visualizations compared variables like age, chronic conditions, SMS reminders, and neighborhood, finding that Ardim Camburi had the highest patient count and best show rate.
+        </p>
         <div class="project-gallery">
-          <img
-            src="images/histograms.png"
-            alt="Distribution histograms"
-            data-caption="A series of histograms displaying the distribution of values for each numerical column in the dataset"
-          />
-          <img
-            src="images/Neighbourhood does effect on attendence as ARDIM CAMBURI has the greatest number of patients and also the greatest showing rate.png"
-            alt="Neighbourhood effect on attendance"
-            data-caption="Neighbourhood effect on attendance — Ardim Camburi has the highest patient count and show rate"
-          />
-          <img
-            src="images/Comparison according to age, chronic diseases.png"
-            alt="Age and chronic disease comparison"
-            data-caption="Attendance comparison by age and chronic diseases"
-          />
+          <img src="images/histograms.png" alt="Distribution histograms"
+               data-caption="A series of histograms displaying the distribution of values for each numerical column in the dataset"
+               data-caption-ar="سلسلة من الرسوم البيانية تعرض توزيع القيم لكل عمود رقمي في مجموعة البيانات" />
+          <img src="images/Neighbourhood does effect on attendence as ARDIM CAMBURI has the greatest number of patients and also the greatest showing rate.png"
+               alt="Neighbourhood effect on attendance"
+               data-caption="Neighbourhood effect on attendance — Ardim Camburi has the highest patient count and show rate"
+               data-caption-ar="تأثير الحي على الحضور — أرديم كامبوري يمتلك أعلى عدد مرضى ومعدل حضور" />
+          <img src="images/Comparison according to age, chronic diseases.png"
+               alt="Age and chronic disease comparison"
+               data-caption="Attendance comparison by age and chronic diseases"
+               data-caption-ar="مقارنة الحضور حسب العمر والأمراض المزمنة" />
         </div>
       </div>
     </div>
 
-    <!-- PROJECT 4 — Real-World Data Wrangling (Python) -->
+    <!-- PROJECT 4 -->
     <div class="project-card reveal" data-cat="python">
       <div class="project-thumb python">🔀</div>
       <div class="project-body">
         <div class="project-meta">
           <div class="project-tag">Python · Pandas · Seaborn · Matplotlib</div>
-          <span class="project-date">December 5, 2024 · Udacity — Data Analyst Nanodegree</span>
+          <span class="project-date"
+                data-en="December 5, 2024 · Udacity — Data Analyst Nanodegree"
+                data-ar="٥ ديسمبر ٢٠٢٤ · Udacity — نانودرجة محلل البيانات">
+            December 5, 2024 · Udacity — Data Analyst Nanodegree
+          </span>
         </div>
-        <h3>Real-World Data Wrangling with Python</h3>
-        <p>End-to-end data wrangling project using Pandas, NumPy, Matplotlib, Seaborn, Requests, and OS. Worked with two real-world financial datasets — one containing card information (client ID, card brand, credit limit) and another with user demographics (age, gender, birth details). Post-merge EDA revealed that male users dominate transactions and Mastercard is the most-used brand.</p>
+        <h3 data-en="Real-World Data Wrangling with Python"
+            data-ar="معالجة بيانات حقيقية باستخدام Python">Real-World Data Wrangling with Python</h3>
+        <p data-en="End-to-end data wrangling project using Pandas, NumPy, Matplotlib, Seaborn, Requests, and OS. Worked with two real-world financial datasets — one containing card information (client ID, card brand, credit limit) and another with user demographics (age, gender, birth details). Post-merge EDA revealed that male users dominate transactions and Mastercard is the most-used brand."
+           data-ar="مشروع معالجة بيانات شامل باستخدام Pandas وNumPy وMatplotlib وSeaborn وRequests وOS. عملت مع مجموعتي بيانات مالية حقيقيتين — إحداهما تحتوي على معلومات البطاقة والأخرى على بيانات ديموغرافية للمستخدمين. كشف التحليل بعد الدمج أن المستخدمين الذكور يهيمنون على المعاملات وأن Mastercard هي العلامة التجارية الأكثر استخداماً.">
+          End-to-end data wrangling project using Pandas, NumPy, Matplotlib, Seaborn, Requests, and OS. Worked with two real-world financial datasets — one containing card information (client ID, card brand, credit limit) and another with user demographics (age, gender, birth details). Post-merge EDA revealed that male users dominate transactions and Mastercard is the most-used brand.
+        </p>
         <div class="project-gallery">
-          <img
-            src="images/male users transactions are more in our dataset and they use Mastercards the most.png"
-            alt="Male users transactions"
-            data-caption="Male users have more transactions in the dataset and prefer Mastercard"
-          />
-          <img
-            src="images/Mastercard is the most used brand for transactions in the dataset.png"
-            alt="Mastercard most used"
-            data-caption="Mastercard is the most used brand for transactions in the dataset"
-          />
+          <img src="images/male users transactions are more in our dataset and they use Mastercards the most.png"
+               alt="Male users transactions"
+               data-caption="Male users have more transactions in the dataset and prefer Mastercard"
+               data-caption-ar="المستخدمون الذكور لديهم معاملات أكثر في مجموعة البيانات ويفضلون Mastercard" />
+          <img src="images/Mastercard is the most used brand for transactions in the dataset.png"
+               alt="Mastercard most used"
+               data-caption="Mastercard is the most used brand for transactions in the dataset"
+               data-caption-ar="Mastercard هي العلامة التجارية الأكثر استخداماً للمعاملات في مجموعة البيانات" />
         </div>
       </div>
     </div>
@@ -193,10 +267,22 @@
 <!-- ABOUT -->
 <section id="about">
   <div>
-    <div class="section-label">About Me</div>
-    <h2 class="section-title">Clean data.<br/>Clear insights.<br/>Real impact.</h2>
-    <p style="color:var(--muted); margin-bottom:1.5rem;">I'm a data analyst based in Palestine with a passion for turning complex, messy data into something teams can actually use. I work with Excel, SQL, Python, and Power BI to build analysis and dashboards that drive real decisions.</p>
-    <p style="color:var(--muted); margin-bottom:2rem;">Whether it's a one-off analysis or an ongoing reporting pipeline, I focus on accuracy, clarity, and making sure the output is genuinely useful — not just pretty.</p>
+    <div class="section-label" data-en="About Me" data-ar="عني">About Me</div>
+    <h2 class="section-title"
+        data-en="Clean data.<br/>Clear insights.<br/>Real impact."
+        data-ar="بيانات نظيفة.<br/>رؤى واضحة.<br/>تأثير حقيقي.">
+      Clean data.<br/>Clear insights.<br/>Real impact.
+    </h2>
+    <p style="color:var(--muted); margin-bottom:1.5rem;"
+       data-en="I'm a data analyst based in Palestine with a passion for turning complex, messy data into something teams can actually use. I work with Excel, SQL, Python, and Power BI to build analysis and dashboards that drive real decisions."
+       data-ar="أنا محلل بيانات مقيم في فلسطين، شغوف بتحويل البيانات المعقدة والفوضوية إلى شيء يمكن للفرق استخدامه فعلاً. أعمل مع Excel وSQL وPython وPower BI لبناء تحليلات ولوحات معلومات تقود قرارات حقيقية.">
+      I'm a data analyst based in Palestine with a passion for turning complex, messy data into something teams can actually use. I work with Excel, SQL, Python, and Power BI to build analysis and dashboards that drive real decisions.
+    </p>
+    <p style="color:var(--muted); margin-bottom:2rem;"
+       data-en="Whether it's a one-off analysis or an ongoing reporting pipeline, I focus on accuracy, clarity, and making sure the output is genuinely useful — not just pretty."
+       data-ar="سواء كان تحليلاً لمرة واحدة أو خط إعداد تقارير مستمر، أركّز على الدقة والوضوح والتأكد من أن المخرجات مفيدة فعلاً — وليست مجرد جميلة.">
+      Whether it's a one-off analysis or an ongoing reporting pipeline, I focus on accuracy, clarity, and making sure the output is genuinely useful — not just pretty.
+    </p>
     <div class="tools-list">
       <span class="tool-badge">Excel</span>
       <span class="tool-badge">Power Query</span>
@@ -212,13 +298,31 @@
   <div class="about-visual reveal">
     <div class="about-card">
       <div style="font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:0.3rem;">Habib Khair</div>
-      <div style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;">Data Analyst · Palestine</div>
-      <div style="color:var(--muted); font-size:0.9rem; line-height:1.7;">Turning complex datasets into clear, actionable insights using modern data tools. Available for freelance projects and full-time opportunities.</div>
+      <div style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;"
+           data-en="Data Analyst · Palestine"
+           data-ar="محلل بيانات · فلسطين">Data Analyst · Palestine</div>
+      <div style="color:var(--muted); font-size:0.9rem; line-height:1.7;"
+           data-en="Turning complex datasets into clear, actionable insights using modern data tools. Available for freelance projects and full-time opportunities."
+           data-ar="تحويل مجموعات البيانات المعقدة إلى رؤى واضحة وقابلة للتنفيذ باستخدام أدوات البيانات الحديثة. متاح للمشاريع الحرة وفرص العمل بدوام كامل.">
+        Turning complex datasets into clear, actionable insights using modern data tools. Available for freelance projects and full-time opportunities.
+      </div>
       <div class="stat-row">
-        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Real Projects</div></div>
-        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Data-Driven</div></div>
-        <div class="stat"><div class="stat-num">SQL</div><div class="stat-label">Python · BI</div></div>
-        <div class="stat"><div class="stat-num">Open</div><div class="stat-label">To Opportunities</div></div>
+        <div class="stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label" data-en="Real Projects" data-ar="مشاريع حقيقية">Real Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label" data-en="Data-Driven" data-ar="مدفوع بالبيانات">Data-Driven</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">SQL</div>
+          <div class="stat-label" data-en="Python · BI" data-ar="Python · BI">Python · BI</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-en="Open" data-ar="مفتوح">Open</div>
+          <div class="stat-label" data-en="To Opportunities" data-ar="للفرص المتاحة">To Opportunities</div>
+        </div>
       </div>
     </div>
   </div>
@@ -228,9 +332,12 @@
 <section id="contact">
   <div class="contact-grid">
     <div class="contact-info reveal">
-      <div class="section-label">Let's Talk</div>
-      <h2>Ready to work together?</h2>
-      <p>Have a project in mind? I'd love to hear about it. Send me a message and let's see how I can help you make the most of your data.</p>
+      <div class="section-label" data-en="Let's Talk" data-ar="لنتحدث">Let's Talk</div>
+      <h2 data-en="Ready to work together?" data-ar="مستعد للعمل معاً؟">Ready to work together?</h2>
+      <p data-en="Have a project in mind? I'd love to hear about it. Send me a message and let's see how I can help you make the most of your data."
+         data-ar="لديك مشروع في الاعتبار؟ يسعدني سماعه. أرسل لي رسالة ودعنا نرى كيف يمكنني مساعدتك في الاستفادة القصوى من بياناتك.">
+        Have a project in mind? I'd love to hear about it. Send me a message and let's see how I can help you make the most of your data.
+      </p>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <a href="mailto:habib.issa94@gmail.com">habib.issa94@gmail.com</a>
@@ -241,7 +348,7 @@
       </div>
       <div class="contact-item">
         <div class="contact-icon">📍</div>
-        <span>Bethlehem, Palestine</span>
+        <span data-en="Bethlehem, Palestine" data-ar="بيت لحم، فلسطين">Bethlehem, Palestine</span>
       </div>
       <div class="social-row">
         <a href="https://x.com/Arqamdealer" target="_blank" class="social-btn" title="Twitter">𝕏</a>
@@ -252,12 +359,21 @@
     <div class="reveal">
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-row">
-          <input type="text" id="senderName" placeholder="Your Name" required />
-          <input type="email" id="senderEmail" placeholder="Email Address" required />
+          <input type="text" id="senderName"
+                 data-placeholder-en="Your Name" data-placeholder-ar="اسمك"
+                 placeholder="Your Name" required />
+          <input type="email" id="senderEmail"
+                 data-placeholder-en="Email Address" data-placeholder-ar="البريد الإلكتروني"
+                 placeholder="Email Address" required />
         </div>
-        <input type="text" id="subject" placeholder="Subject" />
-        <textarea id="message" placeholder="Tell me about your project..." required></textarea>
-        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+        <input type="text" id="subject"
+               data-placeholder-en="Subject" data-placeholder-ar="الموضوع"
+               placeholder="Subject" />
+        <textarea id="message"
+                  data-placeholder-en="Tell me about your project..." data-placeholder-ar="أخبرني عن مشروعك..."
+                  placeholder="Tell me about your project..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;"
+                data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
       </form>
     </div>
   </div>
@@ -265,12 +381,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Habib Khair · Data Analyst · Built with purpose, not templates.</p>
+  <p data-en="© 2025 Habib Khair · Data Analyst · Built with purpose, not templates."
+     data-ar="© 2025 حبيب خير · محلل بيانات · مبني بهدف، لا بقوالب.">
+    © 2025 Habib Khair · Data Analyst · Built with purpose, not templates.
+  </p>
 </footer>
 
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<!-- Main Script -->
 <script src="main.js"></script>
 
 </body>
