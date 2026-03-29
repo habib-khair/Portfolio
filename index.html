@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Habib Khair — Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── Project card expanded layout ── */
+    .project-card {
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-date {
+      font-size: 0.78rem;
+      color: var(--muted, #888);
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.03em;
+    }
+
+    .project-body p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--muted, #888);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Image gallery inside card ── */
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    }
+
+    .project-gallery.single img {
+      grid-column: 1 / -1;
+      height: 180px;
+    }
+
+    /* ── Lightbox / modal ── */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    #lightbox.open {
+      display: flex;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    #lightbox-close {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    #lightbox-close:hover { opacity: 1; }
+
+    #lightbox-caption {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+      text-align: center;
+      max-width: 80vw;
+    }
+
+    /* ── Thumb area for projects with gallery (use color block) ── */
+    .project-thumb { display: flex; align-items: center; justify-content: center; font-size: 2.2rem; }
+
+    /* keep existing color classes working */
+    .project-thumb.sql    { background: var(--sql-color,  #1e2a3a); }
+    .project-thumb.python { background: var(--python-color, #1a2a1e); }
+    .project-thumb.excel  { background: var(--excel-color,  #1a2a20); }
+  </style>
+</head>
+<body>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" />
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Habib Khair</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Available for freelance work</span>
+    <h1>Turning messy data into<br/><span>clear decisions</span></h1>
+    <p>Data Analyst specializing in Excel, SQL, Python, and Power BI, helping businesses turn complex data into clear, actionable insights. With 7+ years of experience bridging operational management and analytics, I bring a results-driven approach to solving real business problems. I'm skilled in Python, SQL, Pandas, NumPy, and data visualization, with hands-on expertise in inventory optimization, KPI tracking, forecasting, and dashboard development. I have a proven track record of reducing cost of goods sold by 15%, cutting excess inventory by 20%, and improving operational efficiency by 25%. I focus on delivering practical, data-driven solutions that support smarter decision-making and drive measurable impact across teams.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title">Core Capabilities</h2>
+  <p class="section-sub">From raw data to decision-ready dashboards — I focus on making data simple, clear, and genuinely useful.</p>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <span class="skill-icon">📊</span>
+      <h3>Data Cleaning</h3>
+      <p>Messy data? I clean, structure, and prepare it for analysis using Excel, Power Query, and Pandas — so you can trust your numbers.</p>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">📈</span>
+      <h3>Data Visualization</h3>
+      <p>I build dashboards and visual reports in Excel and Power BI that make insights immediately clear and easy to act on.</p>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🗄️</span>
+      <h3>SQL Analysis</h3>
+      <p>Writing optimized queries to extract, join, and explore data from relational databases — turning business questions into precise data answers.</p>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🐍</span>
+      <h3>Python Wrangling</h3>
+      <p>Using Pandas, NumPy & Matplotlib to handle large datasets, automate repetitive tasks, and uncover patterns at scale.</p>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">📦</span>
+      <h3>KPI Tracking</h3>
+      <p>Designing and tracking KPIs that genuinely reflect performance — so teams can monitor what matters and drive real decisions.</p>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🔮</span>
+      <h3>Forecasting & Insights</h3>
+      <p>Identifying trends, predicting outcomes, and helping teams stay ahead of problems before they become expensive.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">Explore My Work</h2>
+  <p class="section-sub">A selection of projects across SQL & Power BI and Python — built as part of the Udacity Data Analyst Nanodegree.</p>
+
+  <div class="projects-tabs">
+    <button class="tab-btn active" onclick="filterProjects('all', this)">All</button>
+    <button class="tab-btn" onclick="filterProjects('sql', this)">SQL</button>
+    <button class="tab-btn" onclick="filterProjects('python', this)">Python</button>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+
+    <!-- ════════════════════════════════════════
+         PROJECT 1 — Investigate a Relational Database (SQL)
+         Images: SQL 1.png, SQL 2.png, SQL 3.png, SQL 4.png
+         ════════════════════════════════════════ -->
+    <div class="project-card reveal" data-cat="sql">
+      <div class="project-thumb sql">🗄️</div>
+      <div class="project-body">
+        <div class="project-meta">
+          <div class="project-tag">SQL</div>
+          <span class="project-date">May 29, 2024 · Udacity — Programming for Data Science with Python</span>
+        </div>
+        <h3>Investigate a Relational Database</h3>
+        <p>
+          Explored a relational database using SQL to uncover meaningful business insights. Developed complex,
+          error-free queries utilizing joins, aggregations, subqueries, CTEs, and window functions to analyze
+          rental trends, customer behavior, and film category performance. Key findings included the popularity
+          of family-friendly films, variations in store rental activity over time, and identification of
+          top-paying customers — all presented through clear, well-designed visualizations.
+        </p>
+        <div class="project-gallery">
+          <img src="images/SQL 1.png"  alt="Rental trends by film category"        onclick="openLightbox(this, 'Rental trends by film category')" />
+          <img src="images/SQL 2.png"  alt="Store rental activity over time"        onclick="openLightbox(this, 'Store rental activity over time')" />
+          <img src="images/SQL 3.png"  alt="Top-paying customers analysis"          onclick="openLightbox(this, 'Top-paying customers analysis')" />
+          <img src="images/SQL 4.png"  alt="Family-friendly film popularity"        onclick="openLightbox(this, 'Family-friendly film popularity')" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         PROJECT 2 — Explore US Bikeshare Data (Python)
+         Image: Python code.py.png
+         ════════════════════════════════════════ -->
+    <div class="project-card reveal" data-cat="python">
+      <div class="project-thumb python">🐍</div>
+      <div class="project-body">
+        <div class="project-meta">
+          <div class="project-tag">Python · Pandas</div>
+          <span class="project-date">July 24, 2024 · Udacity — Programming for Data Science with Python</span>
+        </div>
+        <h3>Explore US Bikeshare Data</h3>
+        <p>
+          Built an interactive Python program to analyze bikeshare data for different US cities. The program
+          prompts users to choose a city, month, and day to filter the data, then loads the dataset with Pandas
+          and cleans it by converting dates and extracting useful fields like month, day, and hour. Functions
+          calculate key statistics including most common travel times, popular stations, trip durations, and
+          user demographics — plus a feature to display raw data step-by-step on request. Focused on writing
+          clean, organized code using functions, loops, and conditionals.
+        </p>
+        <div class="project-gallery single">
+          <img src="images/Python code.py.png" alt="Bikeshare data analysis — Python code output" onclick="openLightbox(this, 'Bikeshare data analysis — Python code output')" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         PROJECT 3 — Investigate a Dataset: Medical Appointment No-Shows (Python)
+         Images: histogram distributions.png, neighbourhood attendance.png, age chronic comparison.png
+         ════════════════════════════════════════ -->
+    <div class="project-card reveal" data-cat="python">
+      <div class="project-thumb python">📊</div>
+      <div class="project-body">
+        <div class="project-meta">
+          <div class="project-tag">Python · Pandas · Matplotlib</div>
+          <span class="project-date">November 5, 2024 · Udacity — Data Analyst Nanodegree</span>
+        </div>
+        <h3>Investigate a Dataset — Medical Appointment No-Shows</h3>
+        <p>
+          Used Python (Pandas, NumPy, and Matplotlib) to analyze a real-world healthcare dataset and identify
+          factors affecting patient attendance. Starting with thorough data wrangling — assessing structure,
+          checking data types, finding duplicates, and validating quality — invalid age values were corrected,
+          column names standardized, and unnecessary columns removed. Duplicate patient records were filtered
+          carefully by patient ID and attendance status. Exploratory data analysis with statistical summaries
+          and visualizations compared variables like age, chronic conditions, SMS reminders, and neighborhood
+          — such as finding that Ardim Camburi had the highest patient count and best show rate.
+        </p>
+        <div class="project-gallery">
+          <img
+            src="images/A series of histograms displaying the distribution of values for each numerical column in the dataset, providing insights into the data's frequency distribution.png"
+            alt="Distribution histograms for each numerical column"
+            onclick="openLightbox(this, 'Distribution of numerical columns — frequency histograms')"
+          />
+          <img
+            src="images/Neighbourhood does effect on attendence as ARDIM CAMBURI has the greatest number of patients and also the greatest showing rate.png"
+            alt="Neighbourhood effect on attendance — Ardim Camburi leads"
+            onclick="openLightbox(this, 'Neighbourhood effect on attendance: Ardim Camburi has the highest patient count and show rate')"
+          />
+          <img
+            src="images/Comparison according to age, chronic diseases.png"
+            alt="Attendance comparison by age and chronic diseases"
+            onclick="openLightbox(this, 'Attendance comparison by age and chronic diseases')"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════
+         PROJECT 4 — Real-World Data Wrangling with Python
+         Images: male users transactions.png, Mastercard most used.png
+         ════════════════════════════════════════ -->
+    <div class="project-card reveal" data-cat="python">
+      <div class="project-thumb python">🔀</div>
+      <div class="project-body">
+        <div class="project-meta">
+          <div class="project-tag">Python · Pandas · Seaborn · Matplotlib</div>
+          <span class="project-date">December 5, 2024 · Udacity — Data Analyst Nanodegree</span>
+        </div>
+        <h3>Real-World Data Wrangling with Python</h3>
+        <p>
+          End-to-end data wrangling project using Pandas, NumPy, Matplotlib, Seaborn, Requests, and OS.
+          Worked with two real-world financial datasets — one containing card information (client ID, card brand,
+          credit limit) and another with user demographics (age, gender, birth details). Data was gathered via
+          manual file loading and programmatic downloading, then assessed both visually and programmatically to
+          identify quality and tidiness issues. Cleaned by converting data types, fixing date formats, combining
+          related columns, and standardizing names to enable merging. Post-merge EDA revealed that male users
+          dominate transactions and Mastercard is the most-used brand.
+        </p>
+        <div class="project-gallery">
+          <img
+            src="images/male users transactions are more in our dataset and they use Mastercards the most.png"
+            alt="Male users have more transactions and prefer Mastercards"
+            onclick="openLightbox(this, 'Male users have more transactions in the dataset and prefer Mastercard')"
+          />
+          <img
+            src="images/Mastercard is the most used brand for transactions in the dataset.png"
+            alt="Mastercard is the most used card brand"
+            onclick="openLightbox(this, 'Mastercard is the most used brand for transactions in the dataset')"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /projects-grid -->
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Clean data.<br/>Clear insights.<br/>Real impact.</h2>
+    <p style="color:var(--muted); margin-bottom:1.5rem;">I'm a data analyst based in Palestine with a passion for turning complex, messy data into something teams can actually use. I work with Excel, SQL, Python, and Power BI to build analysis and dashboards that drive real decisions.</p>
+    <p style="color:var(--muted); margin-bottom:2rem;">Whether it's a one-off analysis or an ongoing reporting pipeline, I focus on accuracy, clarity, and making sure the output is genuinely useful — not just pretty.</p>
+    <div class="tools-list">
+      <span class="tool-badge">Excel</span>
+      <span class="tool-badge">Power Query</span>
+      <span class="tool-badge">SQL</span>
+      <span class="tool-badge">Power BI</span>
+      <span class="tool-badge">Python</span>
+      <span class="tool-badge">Pandas</span>
+      <span class="tool-badge">NumPy</span>
+      <span class="tool-badge">Matplotlib</span>
+      <span class="tool-badge">Seaborn</span>
+    </div>
+  </div>
+  <div class="about-visual reveal">
+    <div class="about-card">
+      <div style="font-family:'Playfair Display',serif; font-size:1.3rem; margin-bottom:0.3rem;">Habib Khair</div>
+      <div style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;">Data Analyst · Palestine</div>
+      <div style="color:var(--muted); font-size:0.9rem; line-height:1.7;">Turning complex datasets into clear, actionable insights using modern data tools. Available for freelance projects and full-time opportunities.</div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">Real Projects</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Data-Driven</div></div>
+        <div class="stat"><div class="stat-num">SQL</div><div class="stat-label">Python · BI</div></div>
+        <div class="stat"><div class="stat-num">Open</div><div class="stat-label">To Opportunities</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="section-label">Let's Talk</div>
+      <h2>Ready to work together?</h2>
+      <p>Have a project in mind? I'd love to hear about it. Send me a message and let's see how I can help you make the most of your data.</p>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <a href="/cdn-cgi/l/email-protection#adc5cccfc4cf83c4dedecc9499edcac0ccc4c183cec2c0"><span class="__cf_email__" data-cfemail="d2bab3b0bbb0fcbba1a1b3ebe692b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <a href="tel:+972598519994">+972 598 519 994</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <span>Bethlehem, Palestine</span>
+      </div>
+      <div class="social-row">
+        <a href="https://x.com/Arqamdealer" target="_blank" class="social-btn" title="Twitter">𝕏</a>
+        <a href="https://www.linkedin.com/in/habib-khair/" target="_blank" class="social-btn" title="LinkedIn">in</a>
+        <a href="https://github.com/habib-khair" target="_blank" class="social-btn" title="GitHub">⌥</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <input type="text" id="senderName" placeholder="Your Name" required />
+          <input type="email" id="senderEmail" placeholder="Email Address" required />
+        </div>
+        <input type="text" id="subject" placeholder="Subject" />
+        <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Habib Khair · Data Analyst · Built with purpose, not templates.</p>
+</footer>
+
+<!-- EmailJS SDK -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Main Script -->
+<script src="main.js"></script>
+
+<script>
+  /* ── Lightbox ── */
+  function openLightbox(img, caption) {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = caption || img.alt;
+    document.getElementById('lightbox-caption').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.currentTarget.id === 'lightbox-close') {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') });
+  });
+
+  /* ── Tab filter (keep original logic) ── */
+  function filterProjects(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+   
