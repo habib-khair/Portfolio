@@ -137,11 +137,12 @@ nav {
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--muted);
-  max-width: 520px;
+  max-width: 640px;
   margin-bottom: 2.5rem;
   animation: fadeUp 0.6s 0.2s ease both;
+  line-height: 1.8;
 }
 
 .hero-btns {
@@ -302,7 +303,7 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
 }
 
@@ -312,6 +313,8 @@ section {
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -319,20 +322,32 @@ section {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
+/* ── Compact emoji header strip ── */
 .project-thumb {
-  height: 180px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3.5rem;
+  font-size: 2rem;
+  flex-shrink: 0;
 }
 
 .project-thumb.excel  { background: linear-gradient(135deg, #1a3a2a, #0f2318); }
 .project-thumb.sql    { background: linear-gradient(135deg, #1a2540, #0f1628); }
 .project-thumb.python { background: linear-gradient(135deg, #2a1a35, #180f22); }
 
+/* ── Card body ── */
 .project-body {
   padding: 1.5rem;
+  flex: 1;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .project-tag {
@@ -341,18 +356,138 @@ section {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent2);
-  margin-bottom: 0.5rem;
+}
+
+.project-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
 }
 
 .project-body h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .project-body p {
   color: var(--muted);
   font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ── Image gallery ── */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  border: 1px solid rgba(255,255,255,0.06);
+  display: block;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  opacity: 0.92;
+}
+
+/* Single image spans full width */
+.project-gallery.single {
+  grid-template-columns: 1fr;
+}
+
+.project-gallery.single img {
+  height: 200px;
+}
+
+/* 3-image layout: first image full-width, two below */
+.project-gallery.three img:first-child {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Lightbox ---------- */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#lightbox.open {
+  display: flex;
+}
+
+#lightbox-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem 2rem 5rem;
+}
+
+#lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+  display: block;
+}
+
+#lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10000;
+}
+
+#lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+#lightbox-caption {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+  max-width: 80vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ---------- About ---------- */
@@ -577,4 +712,7 @@ footer {
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .form-row     { grid-template-columns: 1fr; }
   .nav-links    { display: none; }
+  .project-gallery { grid-template-columns: 1fr; }
+  .project-gallery img { height: 160px; }
 }
+
